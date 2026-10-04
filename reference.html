@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sri Lanka 9.–18.10.2026 – reissusuunnitelma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF0EF; --paper:#F7FAF9; --ink:#162226; --muted:#4E5F63; --line:#C9D6D5;
+  --tea:#1F4D3A; --coconut:#E9962B; --ocean:#13807F; --train:#2C5EA8; --city:#7A54A3; --dusk:#D9772A;
+  --bar-ink:#fff;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A1C; --paper:#16252A; --ink:#E6EEEC; --muted:#9FB2B3; --line:#2A3D41;
+    --tea:#5FB98A; --coconut:#F2AE52; --ocean:#3DBDB9; --train:#6E9BE0; --city:#B08DDB; --dusk:#F09A55;
+    --bar-ink:#0F1A1C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A1C; --paper:#16252A; --ink:#E6EEEC; --muted:#9FB2B3; --line:#2A3D41;
+  --tea:#5FB98A; --coconut:#F2AE52; --ocean:#3DBDB9; --train:#6E9BE0; --city:#B08DDB; --dusk:#F09A55;
+  --bar-ink:#0F1A1C;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--train);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,label:focus-within{outline:3px solid var(--coconut);outline-offset:2px;border-radius:4px}
+img,svg{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:18px;align-items:center;height:56px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.top .wrap::-webkit-scrollbar{display:none}
+nav.top b{font-weight:800;font-stretch:80%;letter-spacing:-.01em;margin-right:8px}
+nav.top a{color:var(--muted);text-decoration:none;font-size:15px}
+nav.top a:hover{color:var(--ink)}
+
+/* hero */
+header.hero{padding:56px 0 28px}
+.hero h1{font-size:clamp(46px,9vw,112px);line-height:.88;font-weight:800;font-stretch:75%;letter-spacing:-.035em;margin:0}
+.hero h1 span{display:block;font-weight:400;font-stretch:100%;font-size:.36em;letter-spacing:-.01em;margin-top:.5em;color:var(--muted)}
+.hero p.lede{max-width:60ch;margin:22px 0 0;color:var(--muted);font-size:18px}
+
+/* presence chart */
+.who{margin:38px 0 8px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px}
+.who h2{font-size:18px;margin:0 0 4px;font-weight:700}
+.who .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.chart{overflow-x:auto}
+.chart-inner{min-width:640px}
+.days,.row,.loc{display:grid;grid-template-columns:84px 1fr;align-items:center}
+.days .cols,.loc .cols{display:grid;grid-template-columns:repeat(10,1fr)}
+.days .cols div{font-size:12.5px;color:var(--muted);text-align:center;padding-bottom:6px;border-left:1px dashed var(--line)}
+.days .cols div b{display:block;color:var(--ink);font-size:15px}
+.row{height:38px}
+.row .name{font-weight:700;font-size:15px}
+.track{position:relative;height:26px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),var(--line) calc(10% - 1px) 10%);border-radius:6px}
+.bar{position:absolute;top:0;bottom:0;border-radius:6px;background:var(--tea);color:var(--bar-ink);font-size:12px;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;padding:0 8px;white-space:nowrap;overflow:hidden}
+.loc{margin-top:10px}
+.loc .cols div{font-size:12.5px;font-weight:600;color:var(--bar-ink);padding:6px 6px;border-radius:6px;margin:0 1px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.c-city{background:var(--city)} .c-ocean{background:var(--ocean)} .c-train{background:var(--train)} .c-dusk{background:var(--dusk)} .c-tea{background:var(--tea)}
+
+/* sections */
+section{padding:56px 0 8px}
+section>.wrap>h2{font-size:clamp(30px,5vw,48px);line-height:1;font-weight:800;font-stretch:80%;letter-spacing:-.025em;margin:0 0 10px}
+section>.wrap>p.intro{max-width:62ch;color:var(--muted);margin:0 0 26px}
+
+/* reality */
+.reality{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.reality div{background:var(--paper);padding:18px}
+.reality h3{margin:0 0 6px;font-size:17px;line-height:1.25}
+.reality p{margin:0;font-size:15.5px;color:var(--muted)}
+.reality .em{font-size:26px;display:block;margin-bottom:6px}
+
+/* route map + days */
+.plan{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start}
+.map{position:sticky;top:80px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px}
+.map figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.map .island{fill:color-mix(in srgb,var(--tea) 14%,var(--paper));stroke:color-mix(in srgb,var(--tea) 45%,transparent);stroke-width:1.5}
+.map text{font-family:inherit;font-size:11.5px;fill:var(--ink);font-weight:600}
+.map .route{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.base{margin:0 0 28px}
+.base>h3{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 12px;font-size:24px;font-weight:800;font-stretch:85%;letter-spacing:-.015em}
+.base>h3 small{font-size:14px;font-weight:500;color:var(--muted);font-stretch:100%;letter-spacing:0}
+.base>h3::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c);flex:none;align-self:center}
+.day{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.day .date{font-weight:800;font-stretch:80%;line-height:1}
+.day .date b{display:block;font-size:34px;letter-spacing:-.03em;color:var(--c)}
+.day .date span{font-size:14px;color:var(--muted);font-weight:500;font-stretch:100%}
+.day h4{margin:0 0 4px;font-size:18px;line-height:1.3}
+.day p{margin:0 0 6px;max-width:62ch}
+.day ul{margin:6px 0 0;padding-left:18px;max-width:62ch}
+.day li{margin:3px 0}
+.pill{display:inline-block;font-size:13px;font-weight:600;border-radius:999px;padding:2px 10px;margin:4px 6px 0 0;background:color-mix(in srgb,var(--c) 16%,var(--paper));color:var(--ink);border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.opt{border-left:3px solid var(--c);padding:4px 0 4px 12px;margin:8px 0}
+.opt b{display:block}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.note{font-size:14.5px;color:var(--muted);max-width:66ch;margin:12px 0 0}
+
+/* party week */
+.week{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.night{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;position:relative}
+.night .d{font-weight:800;font-stretch:80%;font-size:20px}
+.night .d span{font-weight:500;font-size:14px;color:var(--muted);font-stretch:100%;margin-left:6px}
+.night p{margin:6px 0 0;font-size:15px}
+.night .where{color:var(--muted);font-size:13.5px}
+.night.off{background:transparent;border-style:dashed}
+
+/* checklist */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px 24px;max-width:900px}
+.check label{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);cursor:pointer}
+.check input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--tea);flex:none}
+.check label:has(input:checked) span{text-decoration:line-through;color:var(--muted)}
+.check small{display:block;color:var(--muted);font-size:13.5px}
+.progress{font-weight:700;margin:0 0 12px}
+
+/* practical */
+.prac{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.prac h3{margin:0 0 6px;font-size:18px}
+.prac ul{margin:0;padding-left:18px}
+.prac li{margin:4px 0;font-size:15.5px}
+
+footer{padding:56px 0 64px;color:var(--muted);font-size:14px}
+footer .wrap{border-top:1px solid var(--line);padding-top:20px}
+
+@media (max-width:820px){
+  .plan{grid-template-columns:1fr}
+  .map{position:static;max-width:320px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .day{grid-template-columns:56px 1fr;gap:12px}
+  .day .date b{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Sivun osiot">
+  <div class="wrap">
+    <b>SL ’26</b>
+    <a href="#kuka">Kuka missä</a>
+    <a href="#lokakuu">Lokakuu</a>
+    <a href="#suunnitelma">Päivät</a>
+    <a href="#kyydit">Kyydit</a>
+    <a href="#illat">Illat</a>
+    <a href="#varaukset">Varaukset</a>
+    <a href="#kaytannot">Käytännöt</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Sri Lanka, 9.–18.10.<span>Juho, Sveni, Macos ja Marko. Surffia, safari, teevuoret ja rantabaarit.</span></h1>
+    <p class="lede">Kaksi tukikohtaa: viisi yötä etelärannikolla Weligamassa ja kaksi yötä Ellassa vuoristossa. Saavumme ja lähdemme eri aikoihin, joten alla näkyy ensin, kuka on missäkin ja milloin.</p>
+
+    <div class="who" id="kuka">
+      <h2>Kuka on saarella milloinkin</h2>
+      <p class="sub">Palkki alkaa laskeutumisesta ja päättyy lähtöön. Alarivi näyttää, missä porukka yöpyy.</p>
+      <div class="chart" role="img" aria-label="Juho on paikalla perjantaista 9.10 klo 8.30 sunnuntaihin 18.10 klo 10.05. Sveni perjantaista 9.10 klo 16.50 sunnuntaihin 18.10 klo 10.30. Macos lauantaista 10.10 klo 15.45 lauantai-iltaan 17.10, lento sunnuntaina klo 01.05. Marko maanantaista 12.10 klo 14.15 sunnuntaihin 18.10 klo 10.30.">
+        <div class="chart-inner">
+          <div class="days"><div></div><div class="cols">
+            <div><b>9</b>pe</div><div><b>10</b>la</div><div><b>11</b>su</div><div><b>12</b>ma</div><div><b>13</b>ti</div>
+            <div><b>14</b>ke</div><div><b>15</b>to</div><div><b>16</b>pe</div><div><b>17</b>la</div><div><b>18</b>su</div>
+          </div></div>
+          <div class="row"><div class="name">Juho</div><div class="track"><div class="bar" style="left:3.54%;width:90.66%"><span>pe 8.30</span><span>su 10.05</span></div></div></div>
+          <div class="row"><div class="name">Sveni</div><div class="track"><div class="bar" style="left:7.0%;width:87.4%"><span>pe 16.50</span><span>su 10.30</span></div></div></div>
+          <div class="row"><div class="name">Macos</div><div class="track"><div class="bar" style="left:16.56%;width:73.9%;background:var(--coconut)"><span>la 15.45</span><span>lento su 01.05</span></div></div></div>
+          <div class="row"><div class="name">Marko</div><div class="track"><div class="bar" style="left:35.94%;width:58.44%"><span>ma 14.15</span><span>su 10.30</span></div></div></div>
+          <div class="loc"><div></div><div class="cols">
+            <div class="c-city">Colombo</div>
+            <div class="c-ocean" style="grid-column:span 5">Weligama, 5 yötä</div>
+            <div class="c-train" style="grid-column:span 2">Ella, 2 yötä</div>
+            <div class="c-dusk">Negombo</div>
+            <div class="c-tea">Kotiin</div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="lokakuu">
+  <div class="wrap">
+    <h2>Mitä lokakuu tarkoittaa</h2>
+    <p class="intro">Lokakuu on välikautta kahden monsuunin välissä. Matka toimii hyvin, kun odotukset ovat oikeat.</p>
+    <div class="reality">
+      <div><span class="em" aria-hidden="true">🌦️</span><h3>Aamut kirkkaita, iltapäivisin ukkosta</h3><p>Surffi ja vaellukset aamuun, iltapäivä kaljalle ja päiväunille. Kevyt sadetakki mukaan.</p></div>
+      <div><span class="em" aria-hidden="true">🪩</span><h3>Bilekausi vasta käynnistyy</h3><p>Etelärannikko on parhaimmillaan marras–huhtikuussa. Osa viikkobileistä pyörii jo, osa ei. Tarkistetaan paikkojen Instagramista ennen lähtöä.</p></div>
+      <div><span class="em" aria-hidden="true">🚂</span><h3>Kandy–Ella-juna ei kulje kokonaan</h3><p>Ditwah-syklonin jälkeen Kandy–Nanu Oya on yhä korjauksessa. Nanu Oya–Ella kulkee, ja se on reitin kaunein pätkä.</p></div>
+      <div><span class="em" aria-hidden="true">🐘</span><h3>Yala kiinni, Udawalawe auki</h3><p>Yalan lohkot 1 ja 2 olivat kuivuuden takia kiinni 15.10 asti. Udawalawe on auki ympäri vuoden ja suoraan reitillämme.</p></div>
+      <div><span class="em" aria-hidden="true">🐋</span><h3>Valasretket ei kannata</h3><p>Mirissan valaskausi on marras–huhtikuu. Lokakuussa meri on usein kova ja valaita vähän.</p></div>
+      <div><span class="em" aria-hidden="true">🍺</span><h3>Ei Poya-päivää reissulla</h3><p>Seuraava alkoholiton täysikuupäivä on vasta 25.10, joten baarit ovat auki koko matkan.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="suunnitelma">
+  <div class="wrap">
+    <h2>Päivä päivältä</h2>
+    <p class="intro">Ajoajat ovat realistisia pakettiautoaikoja, ei Google Mapsin. Iltojen bileet ovat tarkemmin <a href="#illat">omassa osiossaan</a>.</p>
+
+    <div class="plan">
+      <figure class="map" aria-label="Reittikartta">
+        <svg viewBox="0 0 250 420" role="img" aria-labelledby="maptitle">
+          <title id="maptitle">Reitti: kenttä ja Colombo, Weligama, Udawalawe, Ella, Kitulgala, Negombo</title>
+          <path class="island" d="M52 22 C80 34 112 58 140 96 C170 132 198 178 214 232 C226 270 238 298 232 330 C224 360 196 380 160 392 C130 402 98 404 72 394 C52 386 42 360 38 330 C34 300 34 270 32 236 C30 200 28 160 34 120 C38 84 40 46 52 22 Z"/>
+          <!-- Pe: kenttä -> Colombo -->
+          <path class="route" stroke="var(--city)" d="M40 272 L37 296"/>
+          <!-- La: Colombo -> kenttä -> Weligama -->
+          <path class="route" stroke="var(--ocean)" d="M37 296 C40 286 44 278 40 272 C52 300 62 340 93 392"/>
+          <!-- To: Weligama -> Udawalawe -> Ella -->
+          <path class="route" stroke="var(--train)" d="M93 392 C110 372 124 356 138 344 C146 330 150 316 155 304"/>
+          <!-- La: Ella -> Kitulgala -> Negombo -->
+          <path class="route" stroke="var(--dusk)" stroke-dasharray="6 5" d="M155 304 C134 290 112 288 94 291 C76 284 56 276 40 268"/>
+          <g>
+            <circle cx="40" cy="270" r="5.5" fill="var(--dusk)"/><text x="48" y="262">Kenttä · Negombo</text>
+            <circle cx="37" cy="297" r="5.5" fill="var(--city)"/><text x="46" y="311">Colombo</text>
+            <circle cx="93" cy="392" r="5.5" fill="var(--ocean)"/><text x="102" y="404">Weligama</text>
+            <circle cx="138" cy="344" r="5" fill="var(--train)"/><text x="146" y="356">Udawalawe</text>
+            <circle cx="155" cy="304" r="5.5" fill="var(--train)"/><text x="164" y="300">Ella</text>
+            <circle cx="94" cy="291" r="4.5" fill="var(--dusk)"/><text x="92" y="280">Kitulgala</text>
+          </g>
+        </svg>
+        <figcaption>Pääreitti kartalla. Katkoviiva on paluu lauantaina Kitulgalan kautta.</figcaption>
+      </figure>
+
+      <div>
+        <div class="base" style="--c:var(--city)">
+          <h3>Colombo <small>pe 9.10, Juho ja Sveni</small></h3>
+          <div class="day">
+            <div class="date"><b>9</b><span>perjantai</span></div>
+            <div>
+              <h4>Saapuminen ja ilta kaupungissa</h4>
+              <p>Juho laskeutuu klo 8.30 ja on kaupungissa noin tunnissa. Päivä omaan tahtiin: lepoa, Galle Face Green, Pettahin markkinat tai Gangaramayan temppeli.</p>
+              <p>Sveni laskeutuu klo 16.50 ja on kaupungissa noin klo 18–18.30. Illallinen ja Colombon kattobaarit, perjantai on kaupungissa hyvä ilta.</p>
+              <span class="pill">Kyyti: PickMe/Uber</span><span class="pill">Yö: Galle Face tai Kollupitiya</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="base" style="--c:var(--ocean)">
+          <h3>Weligama <small>la 10.10 – to 15.10, 5 yötä</small></h3>
+          <div class="day">
+            <div class="date"><b>10</b><span>lauantai</span></div>
+            <div>
+              <h4>Macos kyytiin ja etelään</h4>
+              <p>Rauhallinen aamu ja lounas Colombossa. Lähtö noin klo 14.30 tila-autolla kentälle, jossa Macos laskeutuu klo 15.45. Kaikki kolme ajavat yhdessä moottoritietä etelään, perillä noin klo 19.30–20. Kuski seuraa lennon tilaa.</p>
+              <p>Illalla Secret Pearl Barin Rumble in the Jungle Weligamassa tai Doctor's House Madihassa.</p>
+              <span class="pill">Tila-auto n. 100–105 $</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="date"><b>11</b><span>sunnuntai</span></div>
+            <div>
+              <h4>Ensimmäinen surffipäivä</h4>
+              <p>Surffitunti Weligaman rannalla aamupäivällä, varaamatta, suoraan koulujen kojuilta. Iltapäivällä Coconut Tree Hill ja Secret Beach Mirissassa.</p>
+              <p>Illalla Ahangama: Lamana, Hakuna Matata tai Mono-speakeasy.</p>
+            </div>
+          </div>
+          <div class="day">
+            <div class="date"><b>12</b><span>maanantai</span></div>
+            <div>
+              <h4>Hiriketiya ja Marko saapuu</h4>
+              <p>Juho, Sveni ja Macos tekevät päiväretken Hiriketiyan hevosenkengän muotoiseen lahteen, noin 1–1,5 tuntia suuntaansa. Lahti on lokakuussa etelän varmin surffipaikka.</p>
+              <p>Marko laskeutuu klo 14.15 ja on Weligamassa noin klo 18–18.30. Ilta rennosti yhdessä, jaksajille Beach Break Surf Hostelin kattobileet.</p>
+              <span class="pill">Markon kyyti n. 60–75 $</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="date"><b>13</b><span>tiistai</span></div>
+            <div>
+              <h4>Kaikki neljä rannalla</h4>
+              <p>Surffitunti koko porukalla, iltapäivä Secret Beachillä. Illalla Lazies Midigamassa, tiistain kattobileet.</p>
+            </div>
+          </div>
+          <div class="day">
+            <div class="date"><b>14</b><span>keskiviikko</span></div>
+            <div>
+              <h4>Galle ja Doctor's House</h4>
+              <p>Päiväretki Galleen noin 45 minuutissa. Matkalla Koggalan paalukalastajat (kuvista peritään maksu), sitten Gallen linnoituksen muurit ja lounas muurien sisällä.</p>
+              <p>Illalla Doctor's House Madihassa ja jatkot viereisessä Shima Guni Beach Clubissa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="base" style="--c:var(--train)">
+          <h3>Ella <small>to 15.10 – la 17.10, 2 yötä</small></h3>
+          <div class="day">
+            <div class="date"><b>15</b><span>torstai</span></div>
+            <div>
+              <h4>Safari ja nousu vuoristoon</h4>
+              <p>Myöhäinen lähtö noin klo 11.30. Udawalawessa noin klo 13.30, lounas ja iltapäivän jeeppisafari noin klo 14.30–17.30. Norsut ovat käytännössä varmoja. Ellassa noin klo 19.30–20, viimeinen nousu ajetaan hämärässä.</p>
+              <span class="pill">Kuski ja pakettiauto alkaa</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="date"><b>16</b><span>perjantai</span></div>
+            <div>
+              <h4>Ainoa kokonainen Ella-päivä</h4>
+              <p>Valitaan toinen:</p>
+              <div class="opt"><b>A: Ellan klassikot</b>Little Adam's Peak auringonnousuun, Ella Swing ja Flying Ravana -zipline. Iltapäivällä Nine Arch Bridge junan ylitysaikaan, aikataulu Ellan asemalta.</div>
+              <div class="opt"><b>B: Junamatka</b>Kuski vie aamulla Nanu Oyaan (lähtö noin klo 6.45). Juna klo 9 kulkee teeviljelmien läpi Ellaan noin 2,5 tunnissa. Iltapäivällä Nine Arch Bridge ja auringonlasku Little Adam's Peakilla. Paikkaliput 30 päivää etukäteen.</div>
+              <p>Illalla Cafe Chill ja pääkadun baarit. Ella Rock jää tällä kertaa väliin.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="base" style="--c:var(--dusk)">
+          <h3>Negombo <small>la 17.10, viimeinen ilta</small></h3>
+          <div class="day">
+            <div class="date"><b>17</b><span>lauantai</span></div>
+            <div>
+              <h4>Paluu, koskenlasku ja jäähyväisillallinen</h4>
+              <p>Macosin yölento antaa koko päivän aikaa, joten Kitulgalan koskenlasku sopii matkalle. Lähtö Ellasta noin klo 6, Kitulgalassa noin klo 10.30 ja laskut Kelani-joella noin klo 11–13. Negombossa noin klo 15.30–16.30.</p>
+              <p>Jos aikainen herätys ei houkuttele, ajetaan suoraan noin klo 9 lähtien, jolloin perillä ollaan noin klo 15.</p>
+              <p>Illalla yhteinen illallinen Negombon rannalla. Macos lähtee kentälle noin klo 21.30.</p>
+              <span class="pill">Koskenlasku n. 25–40 $/hlö</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="base" style="--c:var(--tea)">
+          <h3>Kotiin <small>su 18.10</small></h3>
+          <div class="day">
+            <div class="date"><b>18</b><span>sunnuntai</span></div>
+            <div>
+              <h4>Aamulennot</h4>
+              <p>Macos lensi jo klo 01.05. Juho (10.05), Sveni ja Marko (10.30) lähtevät hotellilta noin klo 7, ja kentälle on noin 20 minuuttia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kyydit">
+  <div class="wrap">
+    <h2>Kyydit</h2>
+    <p class="intro">Pitkät siirrot yksityisellä kuskilla, lyhyet tuktukilla PickMe-sovelluksella. Kyydit hinnoitellaan auton mukaan, ei matkustajien.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Milloin</th><th>Kuka</th><th>Reitti</th><th>Miten</th><th>Arvio</th></tr></thead>
+        <tbody>
+          <tr><td class="num">pe 8.30</td><td>Juho</td><td>Kenttä → Colombo</td><td>PickMe/Uber</td><td class="num">~1 h</td></tr>
+          <tr><td class="num">pe 16.50</td><td>Sveni</td><td>Kenttä → Colombo</td><td>PickMe/Uber</td><td class="num">1–1,5 h</td></tr>
+          <tr><td class="num">la ~14.30</td><td>Juho, Sveni, Macos</td><td>Colombo → kenttä → Weligama</td><td>Tila-auto koko matkan</td><td class="num">n. 100–105 $</td></tr>
+          <tr><td class="num">ma 14.15</td><td>Marko</td><td>Kenttä → Weligama</td><td>Henkilöauto, kuski odottaa aulassa</td><td class="num">n. 60–75 $</td></tr>
+          <tr><td class="num">la–ke</td><td>Kaikki</td><td>Weligaman alue, päiväretket</td><td>Tuktuk, PickMe tai päiväkuski</td><td class="num">—</td></tr>
+          <tr><td class="num">to–la</td><td>Kaikki</td><td>Weligama → Udawalawe → Ella → Negombo</td><td>KDH-pakettiauto ja kuski, 3 päivää</td><td class="num">n. 210–360 $</td></tr>
+          <tr><td class="num">la ~21.30</td><td>Macos</td><td>Negombo → kenttä</td><td>PickMe</td><td class="num">~20 min</td></tr>
+          <tr><td class="num">su ~7.00</td><td>Juho, Sveni, Marko</td><td>Negombo → kenttä</td><td>PickMe tai hotellin kyyti</td><td class="num">~20 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Pyydetään 2–3 tarjousta WhatsAppilla ja varmistetaan, että hintaan kuuluvat polttoaine, moottoritiemaksut ja kuskin majoitus. Kuskille tippiä noin 5–10 $ päivältä. Majoituksen kautta varattu kyyti on yleensä halvempi kuin kansainväliset välityssivustot.</p>
+  </div>
+</section>
+
+<section id="illat">
+  <div class="wrap">
+    <h2>Illat</h2>
+    <p class="intro">Etelärannikon viikkorytmi sovitettuna meidän päiviimme. Kalenteri perustuu kevään sesonkiin, joten jokainen paikka tarkistetaan Instagramista ennen lähtöä.</p>
+    <div class="week">
+      <div class="night"><div class="d">pe 9.10<span>Colombo</span></div><p>Kattobaarit ja klubit</p><p class="where">Colombo on lokakuussa saaren varmin bilekaupunki.</p></div>
+      <div class="night"><div class="d">la 10.10<span>Weligama</span></div><p>Secret Pearl Bar, Rumble in the Jungle</p><p class="where">Tai Doctor's House ja Shima Guni, Madiha</p></div>
+      <div class="night"><div class="d">su 11.10<span>Ahangama</span></div><p>Lamana, Hakuna Matata, Mono</p><p class="where">Lamanassa rullaluistinrata keskellä</p></div>
+      <div class="night"><div class="d">ma 12.10<span>Weligama</span></div><p>Beach Break Surf Hostel</p><p class="where">Kattobileet, Markon ensimmäinen ilta</p></div>
+      <div class="night"><div class="d">ti 13.10<span>Midigama</span></div><p>Lazies</p><p class="where">Tiistain kattobileet</p></div>
+      <div class="night"><div class="d">ke 14.10<span>Madiha</span></div><p>Doctor's House ja Shima Guni</p><p class="where">DJ:t ke ja la klo 18–24, jatkot naapurissa</p></div>
+      <div class="night off"><div class="d">to 15.10<span>Ella</span></div><p>Safaripäivä, illallinen</p></div>
+      <div class="night"><div class="d">pe 16.10<span>Ella</span></div><p>Cafe Chill ja pääkadun baarit</p></div>
+      <div class="night"><div class="d">la 17.10<span>Negombo</span></div><p>Jäähyväisillallinen rannalla</p></div>
+    </div>
+    <p class="note">Tarkistettavat tilit: <a href="https://www.instagram.com/thesecretpearlbar/" target="_blank" rel="noopener">@thesecretpearlbar</a>, <a href="https://www.instagram.com/the_doctors_house/" target="_blank" rel="noopener">@the_doctors_house</a>, <a href="https://www.instagram.com/lamana_ahangama/" target="_blank" rel="noopener">@lamana_ahangama</a>, <a href="https://www.instagram.com/hakuna_matata_ahangama/" target="_blank" rel="noopener">@hakuna_matata_ahangama</a>, <a href="https://www.instagram.com/find_mono_/" target="_blank" rel="noopener">@find_mono_</a>, <a href="https://www.instagram.com/lazies_midigama/" target="_blank" rel="noopener">@lazies_midigama</a>, <a href="https://www.instagram.com/beachbreaksurfhostel/" target="_blank" rel="noopener">@beachbreaksurfhostel</a>. Sisäänpääsyt maksetaan yleensä käteisellä, 1 000–5 000 rupiaa. Kotimatka PickMella, ei bilepaikan edestä otetulla tuktukilla.</p>
+  </div>
+</section>
+
+<section id="varaukset">
+  <div class="wrap">
+    <h2>Varaukset</h2>
+    <p class="intro">Ruksit tallentuvat vain omalle laitteellesi.</p>
+    <p class="progress" id="progress" aria-live="polite"></p>
+    <div class="check" id="checklist">
+      <label><input type="checkbox" data-k="eta"><span>ETA-luvat, jokainen omansa<small>Ilmainen suomalaisille, vain eta.gov.lk</small></span></label>
+      <label><input type="checkbox" data-k="colombo"><span>Colombo, pe 1 yö<small>Juho ja Sveni</small></span></label>
+      <label><input type="checkbox" data-k="satride"><span>Lauantain tila-auto<small>Colombo → kenttä (Macos 15.45) → Weligama</small></span></label>
+      <label><input type="checkbox" data-k="markoride"><span>Markon kyyti ma 14.15<small>Kenttä → Weligama</small></span></label>
+      <label><input type="checkbox" data-k="weligama"><span>Weligama, la–to 5 yötä<small>Marko ma–to</small></span></label>
+      <label><input type="checkbox" data-k="driver"><span>Kuski ja pakettiauto to–la<small>Weligama → Udawalawe → Ella → Negombo</small></span></label>
+      <label><input type="checkbox" data-k="safari"><span>Udawalawen jeeppisafari<small>Kuskin tai hotellin kautta</small></span></label>
+      <label><input type="checkbox" data-k="ella"><span>Ella, to–la 2 yötä</span></label>
+      <label><input type="checkbox" data-k="train"><span>Junaliput Nanu Oya → Ella<small>Vain vaihtoehto B, seatreservation.railway.gov.lk</small></span></label>
+      <label><input type="checkbox" data-k="rafting"><span>Koskenlasku Kitulgalassa<small>Aamupäivän lähtö, laskut n. klo 10–16</small></span></label>
+      <label><input type="checkbox" data-k="negombo"><span>Negombo, la 1 yö<small>Juho, Sveni, Marko. Macos illaksi samaan huoneeseen.</small></span></label>
+      <label><input type="checkbox" data-k="ins"><span>Matkavakuutus ja matkustusilmoitus<small>Kattaako surffin ja skootterin?</small></span></label>
+    </div>
+  </div>
+</section>
+
+<section id="kaytannot">
+  <div class="wrap">
+    <h2>Käytännöt</h2>
+    <div class="prac">
+      <div>
+        <h3>Maahantulo ja raha</h3>
+        <ul>
+          <li>ETA on suomalaisille ilmainen 30 päiväksi, mutta se pitää hakea ennen lentoa. Kopiosivustot veloittavat 80–150 $.</li>
+          <li>Rupiat automaatista. Käteistä tuktukeihin, bileiden sisäänpääsyihin ja kojuihin.</li>
+          <li>Dialogin SIM tai eSIM saapumisaulasta.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Meri ja terveys</h3>
+        <ul>
+          <li>Lokakuussa voimakkaita ripivirtoja. Uidaan siellä missä paikallisetkin, ei kännissä illalla.</li>
+          <li>Sadekausi tarkoittaa denguehyttysiä, hyttysmyrkky mukaan.</li>
+          <li>Kulkukoiria ei silitetä.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kunnioitus ja laki</h3>
+        <ul>
+          <li>Huumelait ovat äärimmäisen ankarat. Bileissä ei oteta mitään vastaan.</li>
+          <li>Ei kuvia selkä Buddha-patsaaseen päin, ei näkyviä Buddha-tatuointeja. Temppeleihin olkapäät ja polvet peitettyinä.</li>
+          <li>Jalokivikaupat ja "temppeli on tänään kiinni" -kuskit ovat huijauksia.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Pakkauslista</h3>
+        <ul>
+          <li>Kevyt sadetakki ja fleece Ellan illoille.</li>
+          <li>Riuttakengät, aurinkorasva, kuivapussi puhelimelle.</li>
+          <li>Otsalamppu aamuvaelluksille. Rinkka, ei kovakuorisia matkalaukkuja.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Pohjatutkimus: <a href="https://mark000.github.io/jordan-boys-trip/sri-lanka/" target="_blank" rel="noopener">Markon Sri Lanka -sivu</a>. Hinnat ovat suuntaa antavia arvioita lokakuulta 2026. Tarkistetaan junien ajat ja bileiden tilanne viikkoa ennen lähtöä.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist input'));
+  var out = document.getElementById('progress');
+  function key(k){ return 'sl26-check-' + k; }
+  function update(){
+    var done = boxes.filter(function(b){ return b.checked; }).length;
+    out.textContent = done + ' / ' + boxes.length + ' varattu';
+  }
+  boxes.forEach(function(b){
+    try { b.checked = localStorage.getItem(key(b.dataset.k)) === '1'; } catch(e) {}
+    b.addEventListener('change', function(){
+      try { localStorage.setItem(key(b.dataset.k), b.checked ? '1' : '0'); } catch(e) {}
+      update();
+    });
+  });
+  update();
+})();
+</script>
+</body>
+</html>
